@@ -24,297 +24,172 @@
   },
   "catalog": [
     {
-      "id": "netflix",
-      "category": "Streaming",
       "service": "Netflix",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 13
-        }
+        { "name": "Perfil personal (1 mes)", "price": 13 }
       ]
     },
     {
-      "id": "primevideo",
-      "category": "Streaming",
       "service": "Prime Video",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 7
-        }
+        { "name": "Perfil personal (1 mes)", "price": 7 }
       ]
     },
     {
-      "id": "hbomax",
-      "category": "Streaming",
       "service": "HBO Max",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 7
-        }
+        { "name": "Perfil personal (1 mes)", "price": 7 }
       ]
     },
     {
-      "id": "disneyplus",
-      "category": "Streaming",
       "service": "Disney+ Premium",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 9
-        }
+        { "name": "Perfil personal (1 mes)", "price": 9 }
       ]
     },
     {
-      "id": "crunchyroll",
-      "category": "Streaming",
       "service": "Crunchyroll Premium",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 8
-        }
+        { "name": "Perfil personal (1 mes)", "price": 8 }
       ]
     },
     {
-      "id": "paramount",
-      "category": "Streaming",
       "service": "Paramount+",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 8
-        }
+        { "name": "Perfil personal (1 mes)", "price": 8 }
       ]
     },
     {
-      "id": "iptv",
-      "category": "Streaming",
       "service": "IPTV Smarters Pro",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 9
-        }
+        { "name": "Perfil personal (1 mes)", "price": 9 }
       ]
     },
     {
-      "id": "vix",
-      "category": "Streaming",
       "service": "ViX Premium",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 6
-        }
+        { "name": "Perfil personal (1 mes)", "price": 6 }
       ]
     },
     {
-      "id": "appletv",
-      "category": "Streaming",
       "service": "Apple TV+",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 7
-        }
+        { "name": "Perfil personal (1 mes)", "price": 7 }
       ]
     },
     {
-      "id": "spotify",
-      "category": "Streaming",
       "service": "Spotify (Cuenta nueva)",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "1 mes",
-          "price": 10
-        },
-        {
-          "name": "3 meses",
-          "price": 27
-        },
-        {
-          "name": "6 meses",
-          "price": 50
-        },
-        {
-          "name": "1 año",
-          "price": 70
-        }
+        { "name": "1 mes", "price": 10 },
+        { "name": "3 meses", "price": 27 },
+        { "name": "6 meses", "price": 50 },
+        { "name": "1 año", "price": 70 }
       ]
     },
     {
-      "id": "youtube",
-      "category": "Streaming",
       "service": "YouTube Premium",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Correo personal (1 mes)",
-          "price": 7
-        }
+        { "name": "Correo personal (1 mes)", "price": 7 }
       ]
     },
     {
-      "id": "movistar",
-      "category": "Streaming",
       "service": "Movistar TV",
-      "plans": [
-        {
-          "name": "Perfil personal (1 mes) + activación a TV",
-          "price": 20
-        }
-      ]
-    },
-    {
-      "id": "dgo",
       "category": "Streaming",
+      "plans": [
+        { "name": "Perfil personal (1 mes) + activación a TV", "price": 20 }
+      ]
+    },
+    {
       "service": "DGO",
+      "category": "Streaming",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes) + activación a TV",
-          "price": 20
-        }
+        { "name": "Perfil personal (1 mes) + activación a TV", "price": 20 }
       ]
     },
+
     {
-      "id": "chatgpt",
-      "category": "IA",
       "service": "ChatGPT",
-      "plans": [
-        {
-          "name": "Perfil personal (1 mes) - a tu correo",
-          "price": 20
-        }
-      ]
-    },
-    {
-      "id": "gemini",
       "category": "IA",
+      "plans": [
+        { "name": "Perfil personal (1 mes) - a tu correo", "price": 20 }
+      ]
+    },
+    {
       "service": "Gemini Pro + 2TB en Drive",
+      "category": "IA",
       "plans": [
-        {
-          "name": "1 mes - a tu correo",
-          "price": 15
-        },
-        {
-          "name": "3 meses - a tu correo",
-          "price": 25
-        },
-        {
-          "name": "6 meses - a tu correo",
-          "price": 40
-        },
-        {
-          "name": "1 año - a tu correo",
-          "price": 60
-        }
+        { "name": "1 mes - a tu correo", "price": 15 },
+        { "name": "3 meses - a tu correo", "price": 25 },
+        { "name": "6 meses - a tu correo", "price": 40 },
+        { "name": "1 año - a tu correo", "price": 60 }
       ]
     },
+
     {
-      "id": "canva",
-      "category": "Software",
       "service": "Canva (activación a tu correo)",
+      "category": "Software",
       "plans": [
-        {
-          "name": "1 año",
-          "price": 7
-        },
-        {
-          "name": "2 años",
-          "price": 9
-        },
-        {
-          "name": "3 años",
-          "price": 12
-        }
+        { "name": "1 año", "price": 7 },
+        { "name": "2 años", "price": 9 },
+        { "name": "3 años", "price": 12 }
       ]
     },
     {
-      "id": "capcut",
-      "category": "Software",
       "service": "CapCut",
+      "category": "Software",
       "plans": [
-        {
-          "name": "Perfil personal (1 mes)",
-          "price": 13
-        }
+        { "name": "Perfil personal (1 mes)", "price": 13 }
       ]
     },
     {
-      "id": "office365",
-      "category": "Software",
       "service": "Microsoft Office 365",
+      "category": "Software",
       "plans": [
-        {
-          "name": "Para 5 dispositivos (1 año)",
-          "price": 25
-        },
-        {
-          "name": "2024 Pro Plus (1 año)",
-          "price": 40
-        },
-        {
-          "name": "Office 365 (Permanente)",
-          "price": 40
-        }
+        { "name": "Para 5 dispositivos (1 año)", "price": 25 },
+        { "name": "2024 Pro Plus (1 año)", "price": 40 },
+        { "name": "Office 365 (Permanente)", "price": 40 }
       ]
     },
     {
-      "id": "windows11",
-      "category": "Software",
       "service": "Windows 11 Pro OEM",
+      "category": "Software",
       "plans": [
-        {
-          "name": "Permanente",
-          "price": 45
-        }
+        { "name": "Permanente", "price": 45 }
       ]
     },
     {
-      "id": "eset",
-      "category": "Software",
       "service": "ESET Antivirus",
+      "category": "Software",
       "plans": [
-        {
-          "name": "1 mes",
-          "price": 10
-        },
-        {
-          "name": "1 año",
-          "price": 40
-        },
-        {
-          "name": "2 años",
-          "price": 60
-        }
+        { "name": "1 mes", "price": 10 },
+        { "name": "1 año", "price": 40 },
+        { "name": "2 años", "price": 60 }
       ]
     },
     {
-      "id": "duolingo",
-      "category": "Software",
       "service": "Duolingo",
+      "category": "Software",
       "plans": [
-        {
-          "name": "1 mes",
-          "price": 10
-        },
-        {
-          "name": "1 año",
-          "price": 35
-        }
+        { "name": "1 mes", "price": 10 },
+        { "name": "1 año", "price": 35 }
       ]
     },
     {
-      "id": "psplus",
-      "category": "Software",
       "service": "PlayStation Plus",
+      "category": "Software",
       "plans": [
-        {
-          "name": "Consultar",
-          "price": null
-        }
+        { "name": "Consultar", "price": null }
       ]
     }
   ]
