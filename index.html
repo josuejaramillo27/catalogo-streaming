@@ -226,7 +226,41 @@
     });
   }
 
-  function makeHeroLogo(item){
+  function slugify(name){
+  return String(name || "")
+    .toLowerCase()
+    .trim()
+    .replaceAll("+", "plus")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function makeHeroLogo(item){
+  const wrap = document.createElement("div");
+  wrap.className = "hero-logo";
+
+  const box = document.createElement("div");
+  box.className = "logo-box";
+
+  const img = document.createElement("img");
+  img.alt = (item.service || "") + " logo";
+  img.loading = "lazy";
+
+  // 1) si existe item.logo, úsalo
+  // 2) si no, intenta assets/<nombre-plataforma>.png
+  const fallback = `assets/${slugify(item.service)}.png`;
+  img.src = item.logo || fallback;
+
+  img.onerror = () => {
+    box.innerHTML = `<div class="hero-emoji">${EMOJI[item.category] || "✨"}</div>`;
+  };
+
+  box.appendChild(img);
+  wrap.appendChild(box);
+  return wrap;
+}
+
     const wrap = document.createElement("div");
     wrap.className = "hero-logo";
 
