@@ -27,7 +27,6 @@
       "id": "netflix",
       "category": "Streaming",
       "service": "Netflix",
-      "logo": "assets/netflix.png",
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -39,7 +38,6 @@
       "id": "primevideo",
       "category": "Streaming",
       "service": "Prime Video",
-      "logo": "assets/primevideo.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -51,7 +49,6 @@
       "id": "hbomax",
       "category": "Streaming",
       "service": "HBO Max",
-      "logo": "assets/hbo.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -63,7 +60,6 @@
       "id": "disneyplus",
       "category": "Streaming",
       "service": "Disney+ Premium",
-      "logo": "assets/disney.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -75,7 +71,6 @@
       "id": "crunchyroll",
       "category": "Streaming",
       "service": "Crunchyroll Premium",
-      "logo": "assets/crunchyroll.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -87,7 +82,6 @@
       "id": "paramount",
       "category": "Streaming",
       "service": "Paramount+",
-      "logo": "assets/paramount.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -99,7 +93,6 @@
       "id": "iptv",
       "category": "Streaming",
       "service": "IPTV Smarters Pro",
-      "logo": "assets/iptv-smarters.pro.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -111,7 +104,6 @@
       "id": "vix",
       "category": "Streaming",
       "service": "ViX Premium",
-      "logo": "assets/vix-premium.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -123,7 +115,6 @@
       "id": "appletv",
       "category": "Streaming",
       "service": "Apple TV+",
-      "logo": "assets/apple-tv-plus.png"
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -135,7 +126,6 @@
       "id": "spotify",
       "category": "Streaming",
       "service": "Spotify (Cuenta nueva)",
-      "logo": "assets/spotify.png"
       "plans": [
         {
           "name": "1 mes",
