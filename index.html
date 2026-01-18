@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>AKAZA SERVICIOS - Catálogo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AKAZA Servicios</title>
 
 <style>
 :root{
@@ -11,57 +11,46 @@
   --card:#12121a;
   --muted:#b8b8c6;
   --text:#f4f4fb;
-  --border:rgba(255,255,255,.10);
-  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --border:rgba(255,255,255,.1);
   --radius:18px;
 }
-  .section{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 16px;
-  margin: 14px 0;
-}
-.section h2{ margin:0 0 10px; font-size:16px; }
-.section ul{ margin:0; padding-left:18px; color: var(--muted); }
-.section .note{ margin-top:10px; font-size:12px; color: var(--muted); }
-
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:system-ui,Segoe UI,Roboto,Arial;
   background:var(--bg);
   color:var(--text);
 }
-.wrap{max-width:1100px;margin:0 auto;padding:24px 16px 80px}
+.wrap{max-width:1100px;margin:auto;padding:20px}
 
 header{
-  padding:20px;
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  background:var(--card);
-  box-shadow:var(--shadow);
-  margin-bottom:20px;
+  padding:20px;
+  margin-bottom:14px;
 }
-h1{margin:0;font-size:22px}
-.subtitle{color:var(--muted);font-size:13px}
 
-.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.section{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  margin-bottom:14px;
+}
+.section h2{margin:0 0 10px}
+.section ul{margin:0;padding-left:18px;color:var(--muted)}
+
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 .tab{
   padding:8px 14px;
   border-radius:999px;
   border:1px solid var(--border);
-  background:#00000055;
-  color:var(--muted);
   cursor:pointer;
   font-size:13px;
+  color:var(--muted);
 }
-.tab.active{
-  background:#20c99733;
-  border-color:#20c997;
-  color:#fff;
-}
+.tab.active{background:#25d36633;color:#fff;border-color:#25d366}
 
 .grid{
   display:grid;
@@ -76,58 +65,40 @@ h1{margin:0;font-size:22px}
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:16px;
-  box-shadow:var(--shadow);
 }
 
 .logo-box{
-  width:120px;
-  height:120px;
-  margin:0 auto 10px;
-  border-radius:22px;
+  width:130px;
+  height:130px;
+  margin:auto;
+  margin-bottom:10px;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#00000055;
-  overflow:hidden;
+  border-radius:22px;
 }
-.logo-box img{
-  width:85%;
-  height:85%;
-  object-fit:contain;
-}
+.logo-box img{width:85%;height:85%;object-fit:contain}
 
-.service-name{
-  text-align:center;
-  font-weight:800;
-  margin-bottom:6px;
-}
-.hint{
-  text-align:center;
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:10px;
-}
-
+.service-name{text-align:center;font-weight:800;margin-bottom:6px}
 .plan{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:10px;
+  margin-bottom:6px;
   border:1px solid var(--border);
   border-radius:12px;
-  background:#00000044;
   cursor:pointer;
-  margin-bottom:6px;
 }
 .price{font-weight:700}
 
 .wa{
-  margin-top:10px;
+  margin-top:8px;
   width:100%;
   padding:12px;
   border-radius:14px;
-  border:1px solid #25D366;
-  background:#25D36633;
+  border:1px solid #25d366;
+  background:#25d36633;
   color:#fff;
   font-weight:800;
   cursor:pointer;
@@ -140,107 +111,112 @@ h1{margin:0;font-size:22px}
   width:56px;
   height:56px;
   border-radius:50%;
-  background:#25D366;
-  color:#08240f;
+  background:#25d366;
   font-size:26px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border:none;
   cursor:pointer;
-  box-shadow:0 18px 35px rgba(0,0,0,.45);
 }
 </style>
 </head>
 
 <body>
 <div class="wrap">
-  <header>
-    <h1 id="businessName">Catálogo</h1>
-    <div class="subtitle">Plataformas streaming, IA y software</div>
-  </header>
 
-<!-- ✅ INFO IMPORTANTE (ARRIBA) -->
-  <div class="section" id="infoBox" style="display:none;">
-    <h2>Información importante</h2>
-    <ul id="infoList"></ul>
-  </div>
+<header>
+  <h1 id="businessName">Catálogo</h1>
+  <div style="color:var(--muted)">Streaming • IA • Software</div>
+</header>
 
-  <!-- DISTRIBUIDORES (AL FINAL) -->
-<div class="section" id="distBox" style="display:none;">
-  <h2>¿Quieres ser distribuidor?</h2>
-  <ul id="distList"></ul>
-  <div class="note">Escríbeme por WhatsApp para más info.</div>
+<!-- INFO IMPORTANTE -->
+<div class="section" id="infoBox" style="display:none">
+  <h2>Información importante</h2>
+  <ul id="infoList"></ul>
 </div>
 
+<div class="tabs" id="tabs"></div>
+<div class="grid" id="grid"></div>
 
-<button class="float-wa" id="floatWA">✆</button>
+<!-- DISTRIBUIDORES -->
+<div class="section" id="distBox" style="display:none">
+  <h2>¿Quieres ser distribuidor?</h2>
+  <ul id="distList"></ul>
+</div>
+
+</div>
+
+<div class="float-wa" id="floatWA">✆</div>
 
 <script>
 const EMOJI={Streaming:"🎬",IA:"🤖",Software:"💻"};
 
 /** convierte "Disney+ Premium" -> "disney-premium" (solo para fallback local) */
-function slugify(name){
-  return String(name||"")
+Function slugify(name){
+  Return String(name||"")
     .toLowerCase()
     .trim()
-    .replaceAll("+","")
-    .replaceAll("á","a").replaceAll("é","e").replaceAll("í","i").replaceAll("ó","o").replaceAll("ú","u").replaceAll("ñ","n")
-    .replace(/[^a-z0-9]+/g,"-")
-    .replace(/(^-|-$)/g,"");
+    .replaceAll("+", "")
+    .replaceAll("á", "a").replaceAll("é", "e").replaceAll("í", "i").replaceAll("ó", "o").replaceAll("ú", "u").replaceAll("ñ", "n")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/ (^ -|-$)/g,"");
 }
 
 /** 1) intentos locales (tus PNGs) por marca */
-function localCandidates(service){
-  const s=(service||"").toLowerCase();
+Function localCandidates(service){
+  Const s = (service||"").toLowerCase();
 
   // usa EXACTAMENTE estos nombres en /assets/
-  if(s.includes("netflix")) return ["assets/netflix.png"];
-  if(s.includes("prime")) return ["assets/primevideo.png","assets/prime-video.png"];
-  if(s.includes("hbo")) return ["assets/hbo.png","assets/hbo-max.png"];
-  if(s.includes("disney")) return ["assets/disney.png","assets/disneyplus.png","assets/disney-plus.png"];
-  if(s.includes("crunchyroll")) return ["assets/crunchyroll.png"];
-  if(s.includes("paramount")) return ["assets/paramount.png","assets/paramountplus.png"];
-  if(s.includes("iptv")) return ["assets/iptv-smarters-pro.png","assets/iptv.png"];
-  if(s.includes("vix")) return ["assets/vix-premium.png","assets/vix.png"];
-  if(s.includes("apple tv")) return ["assets/apple-tv-plus.png","assets/appletv.png"];
-  if(s.includes("spotify")) return ["assets/spotify.png"];
-  if(s.includes("youtube")) return ["assets/youtube.png"];
-  if(s.includes("movistar tv")) return ["assets/movistar.png"];
-  if(s.includes("chatgpt")) return ["assets/gpt.png"];
-  if(s.includes("gemini")) return ["assets/gemini.png"];
-  if(s.includes("canva")) return ["assets/canva.png"];
-  if(s.includes("capcut")) return ["assets/capcut.png"];
-  if(s.includes("office")) return ["assets/office.png"];
-  if(s.includes("windows")) return ["assets/windows.png"];
-  if(s.includes("eset")) return ["assets/eset.png"];
-  if(s.includes("duolingo")) return ["assets/duolingo.png"];
-  if(s.includes("playstation")) return ["assets/playstation.png"];
+  If (s.includes("netflix")) Then Return ["assets/netflix.png"];
+  If (s.includes("prime")) Then Return ["assets/primevideo.png","assets/prime-video.png"];
+  If (s.includes("hbo")) Then Return ["assets/hbo.png","assets/hbo-max.png"];
+  If (s.includes("disney")) Then Return ["assets/disney.png","assets/disneyplus.png","assets/disney-plus.png"];
+  If (s.includes("crunchyroll")) Then Return ["assets/crunchyroll.png"];
+  If (s.includes("paramount")) Then Return ["assets/paramount.png","assets/paramountplus.png"];
+  If (s.includes("iptv")) Then Return ["assets/iptv-smarters-pro.png","assets/iptv.png"];
+  If (s.includes("vix")) Then Return ["assets/vix-premium.png","assets/vix.png"];
+  If (s.includes("apple tv")) Then Return ["assets/apple-tv-plus.png","assets/appletv.png"];
+  If (s.includes("spotify")) Then Return ["assets/spotify.png"];
+  If (s.includes("youtube")) Then Return ["assets/youtube.png"];
+  If (s.includes("movistar tv")) Then Return ["assets/movistar.png"];
+  If (s.includes("chatgpt")) Then Return ["assets/gpt.png"];
+  If (s.includes("gemini")) Then Return ["assets/gemini.png"];
+  If (s.includes("canva")) Then Return ["assets/canva.png"];
+  If (s.includes("capcut")) Then Return ["assets/capcut.png"];
+  If (s.includes("office")) Then Return ["assets/office.png"];
+  If (s.includes("windows")) Then Return ["assets/windows.png"];
+  If (s.includes("eset")) Then Return ["assets/eset.png"];
+  If (s.includes("duolingo")) Then Return ["assets/duolingo.png"];
+  If (s.includes("playstation")) Then Return ["assets/playstation.png"];
 
   // fallback genérico por si subes más logos
-  return [`assets/${slugify(service)}.png`];
+  Return [`assets/${slugify(service)}.png`];
 }
 
 /** 2) intentos CDN (si no hay local) */
-function cdnCandidates(service){
-  const s=(service||"").toLowerCase();
+Function cdnCandidates(service){
+  Const s = (service||"").toLowerCase();
 
-  if(s.includes("netflix")) return ["netflix"];
-  if(s.includes("hbo")) return ["hbomax","hbo"];
-  if(s.includes("crunchyroll")) return ["crunchyroll"];
-  if(s.includes("paramount")) return ["paramountplus","paramount"];
-  if(s.includes("apple tv")) return ["appletv","appletvplus"];
-  if(s.includes("spotify")) return ["spotify"];
-    if(s.includes("youtube")) return ["assets/youtube.png"];
-  if(s.includes("movistar tv")) return ["assets/movistar.png"];
-  if(s.includes("chatgpt")) return ["assets/gpt.png"];
-  if(s.includes("gemini")) return ["assets/gemini.png"];
+  If (s.includes("netflix")) Then Return ["netflix"];
+  If (s.includes("hbo")) Then Return ["hbomax","hbo"];
+  If (s.includes("crunchyroll")) Then Return ["crunchyroll"];
+  If (s.includes("paramount")) Then Return ["paramountplus","paramount"];
+  If (s.includes("apple tv")) Then Return ["appletv","appletvplus"];
+  If (s.includes("spotify")) Then Return ["spotify"];
+    If (s.includes("youtube")) Then Return ["assets/youtube.png"];
+  If (s.includes("movistar tv")) Then Return ["assets/movistar.png"];
+  If (s.includes("chatgpt")) Then Return ["assets/gpt.png"];
+  If (s.includes("gemini")) Then Return ["assets/gemini.png"];
 
   // estos pueden fallar según el CDN, por eso van como último recurso
-  if(s.includes("disney")) return ["disneyplus","disney"];
-  if(s.includes("prime")) return ["primevideo","amazonprimevideo","amazonprime"];
+  If (s.includes("disney")) Then Return ["disneyplus","disney"];
+  If (s.includes("prime")) Then Return ["primevideo","amazonprimevideo","amazonprime"];
 
-  return [];
+  Return [];
+}
+
+function wa(num,msg){
+  return "https://wa.me/"+num+"?text="+encodeURIComponent(msg);
 }
 
 async function loadData(){
@@ -248,67 +224,64 @@ async function loadData(){
   return await r.json();
 }
 
-function waLink(num,msg){
-  return "https://wa.me/"+num+"?text="+encodeURIComponent(msg);
+function renderLogo(box, service, category){
+  const base=normalize(service);
+  const tries=[
+    `assets/${base}.png`,
+    `assets/${base}.jpg`,
+    `https://cdn.simpleicons.org/${base}/ffffff`
+  ];
+  const img=document.createElement("img");
+  let i=0;
+  img.onerror=()=>{
+    i++;
+    if(i<tries.length) img.src=tries[i];
+    else box.textContent=EMOJI[category]||"✨";
+  };
+  img.src=tries[0];
+  box.appendChild(img);
 }
 
-function renderLogo(box, item){
-  const locals = localCandidates(item.service);
-  const cdns   = cdnCandidates(item.service).map(x=>`https://cdn.simpleicons.org/${x}/ffffff`);
-
-  // Lista final de intentos: primero local, luego CDN
-  const tries = [...locals, ...cdns];
-
-  // nada que intentar:
-  if(!tries.length){
-    box.textContent = EMOJI[item.category] || "✨";
-    return;
+function renderSections(data){
+  if(data.sections?.info_importante?.length){
+    infoBox.style.display="block";
+    infoList.innerHTML="";
+    data.sections.info_importante.forEach(t=>{
+      const li=document.createElement("li");
+      li.textContent=t;
+      infoList.appendChild(li);
+    });
   }
-
-  const img = document.createElement("img");
-  img.alt = (item.service||"") + " logo";
-  img.loading = "lazy";
-
-  let i = 0;
-  const tryNext = () => {
-    if(i >= tries.length){
-      box.textContent = EMOJI[item.category] || "✨";
-      return;
-    }
-    // anti-cache:
-    const src = tries[i];
-    img.src = src + (src.includes("?") ? "&" : "?") + "v=" + Date.now();
-    i++;
-  };
-
-  img.onerror = tryNext;
-  box.appendChild(img);
-  tryNext();
+  if(data.sections?.distribuidor?.length){
+    distBox.style.display="block";
+    distList.innerHTML="";
+    data.sections.distribuidor.forEach(t=>{
+      const li=document.createElement("li");
+      li.textContent=t;
+      distList.appendChild(li);
+    });
+  }
 }
 
 function render(data){
-  document.getElementById("businessName").textContent = data.business_name || "Catálogo";
-
-  const cats=["Todos",...new Set((data.catalog||[]).map(i=>i.category))];
+  businessName.textContent=data.business_name||"Catálogo";
+  const cats=["Todos",...new Set(data.catalog.map(i=>i.category))];
   let active="Todos";
 
   function drawTabs(){
-    const t=document.getElementById("tabs");
-    t.innerHTML="";
+    tabs.innerHTML="";
     cats.forEach(c=>{
       const b=document.createElement("div");
       b.className="tab"+(c===active?" active":"");
       b.textContent=c;
       b.onclick=()=>{active=c;drawTabs();drawGrid();};
-      t.appendChild(b);
+      tabs.appendChild(b);
     });
   }
 
   function drawGrid(){
-    const g=document.getElementById("grid");
-    g.innerHTML="";
-
-    (data.catalog||[])
+    grid.innerHTML="";
+    data.catalog
       .filter(i=>active==="Todos"||i.category===active)
       .forEach(item=>{
         const card=document.createElement("div");
@@ -316,7 +289,7 @@ function render(data){
 
         const box=document.createElement("div");
         box.className="logo-box";
-        renderLogo(box, item);
+        renderLogo(box,item.service,item.category);
         card.appendChild(box);
 
         const n=document.createElement("div");
@@ -324,73 +297,40 @@ function render(data){
         n.textContent=item.service;
         card.appendChild(n);
 
-        const h=document.createElement("div");
-        h.className="hint";
-        h.textContent="Toca un plan para pedir por WhatsApp";
-        card.appendChild(h);
-
-        (item.plans||[]).forEach(p=>{
+        item.plans.forEach(p=>{
           const row=document.createElement("div");
           row.className="plan";
-          row.innerHTML=`<div>${p.name}</div><div class="price">${p.price?data.currency+p.price:"Consultar"}</div>`;
-          row.onclick=()=>{
-            window.open(
-              waLink(
-                data.whatsapp_number,
-                `Hola, quiero pedir: ${item.service} - ${p.name} (${p.price?data.currency+p.price:"Consultar"})`
-              )
-            );
-          };
+          row.innerHTML=`<div>${p.name}</div><div class="price">${data.currency}${p.price}</div>`;
+          row.onclick=()=>window.open(
+            wa(data.whatsapp_number,
+            `Hola, quiero ${item.service} - ${p.name} (${data.currency}${p.price})`)
+          );
           card.appendChild(row);
         });
 
-        const wa=document.createElement("button");
-        wa.className="wa";
-        wa.textContent="Pedir por WhatsApp";
-        wa.onclick=()=>window.open(waLink(data.whatsapp_number,`Hola, quiero información de ${item.service}`));
-        card.appendChild(wa);
+        const w=document.createElement("button");
+        w.className="wa";
+        w.textContent="Pedir por WhatsApp";
+        w.onclick=()=>window.open(
+          wa(data.whatsapp_number,`Hola, quiero información de ${item.service}`)
+        );
+        card.appendChild(w);
 
-        g.appendChild(card);
+        grid.appendChild(card);
       });
   }
 
   drawTabs();
   drawGrid();
 
-  document.getElementById("floatWA").onclick=()=>{
-    window.open(waLink(data.whatsapp_number,"Hola, quiero hacer un pedido."));
-  };
-}
-function renderSections(data){
-  const info = data.sections?.info_importante || [];
-  const dist = data.sections?.distribuidor || [];
-
-  if(info.length){
-    document.getElementById("infoBox").style.display = "block";
-    const ul = document.getElementById("infoList");
-    ul.innerHTML = "";
-    info.forEach(t=>{
-      const li = document.createElement("li");
-      li.textContent = t;
-      ul.appendChild(li);
-    });
-  }
-
-  if(dist.length){
-    document.getElementById("distBox").style.display = "block";
-    const ul = document.getElementById("distList");
-    ul.innerHTML = "";
-    dist.forEach(t=>{
-      const li = document.createElement("li");
-      li.textContent = t;
-      ul.appendChild(li);
-    });
-  }
+  floatWA.onclick=()=>window.open(
+    wa(data.whatsapp_number,"Hola, quiero hacer un pedido")
+  );
 }
 
 loadData().then(data=>{
-  renderSections(data);   // ✅ arriba y abajo
-  render(data);    // ✅ catálogo al medio
+  renderSections(data);
+  render(data);
 });
 </script>
 </body>
