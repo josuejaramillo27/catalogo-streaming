@@ -236,7 +236,44 @@
     .replace(/(^-|-$)/g, "");
 }
 
+function slugify(name){
+  return String(name || "")
+    .toLowerCase()
+    .trim()
+    .replaceAll("+", "plus")
+    .replaceAll("á","a").replaceAll("é","e").replaceAll("í","i").replaceAll("ó","o").replaceAll("ú","u").replaceAll("ñ","n")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 function makeHeroLogo(item){
+  const wrap = document.createElement("div");
+  wrap.className = "hero-logo";
+
+  const box = document.createElement("div");
+  box.className = "logo-box";
+
+  const img = document.createElement("img");
+  img.alt = (item.service || "") + " logo";
+  img.loading = "lazy";
+
+  // 1) Si existe item.logo úsalo
+  // 2) Si no, intenta automáticamente: assets/<nombre-plataforma>.png
+  const auto = `assets/${slugify(item.service)}.png`;
+
+  // anti-caché (para que se vean de inmediato en GitHub Pages)
+  img.src = (item.logo || auto) + "?v=" + Date.now();
+
+  img.onerror = () => {
+    box.innerHTML = `<div class="hero-emoji">${EMOJI[item.category] || "✨"}</div>`;
+  };
+
+  box.appendChild(img);
+  wrap.appendChild(box);
+  return wrap;
+}
+
   const wrap = document.createElement("div");
   wrap.className = "hero-logo";
 
