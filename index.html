@@ -354,7 +354,10 @@ function render(data){
   };
 }
 
-loadData().then(render);
+loadData().then(data=>{
+  renderSections(data);   // ✅ arriba y abajo
+  renderCatalog(data);    // ✅ catálogo al medio
+});
 </script>
 </body>
 </html>
