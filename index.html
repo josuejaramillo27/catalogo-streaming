@@ -187,6 +187,13 @@ function localCandidates(service){
   if(s.includes("movistar tv")) return ["assets/movistar.png"];
   if(s.includes("chatgpt")) return ["assets/gpt.png"];
   if(s.includes("gemini")) return ["assets/gemini.png"];
+  if(s.includes("canva")) return ["assets/canva.png"];
+  if(s.includes("capcut")) return ["assets/capcut.png"];
+  if(s.includes("office")) return ["assets/office.png"];
+  if(s.includes("windows")) return ["assets/windows.png"];
+  if(s.includes("eset")) return ["assets/eset.png"];
+  if(s.includes("duolingo")) return ["assets/duolingo.png"];
+  if(s.includes("playstation")) return ["assets/playstation.png"];
 
   // fallback genérico por si subes más logos
   return [`assets/${slugify(service)}.png`];
