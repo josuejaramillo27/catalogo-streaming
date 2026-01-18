@@ -187,6 +187,40 @@ header,.section,.card{
   color:var(--muted);
   font-size:14px;
 }
+.header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.header-text{ flex:1; }
+
+.header-search{
+  min-width: 240px;
+  max-width: 360px;
+  width: 35%;
+}
+
+#searchInput{
+  width:100%;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:#00000055;
+  color:var(--text);
+  outline:none;
+}
+
+#searchInput::placeholder{ color: rgba(184,184,198,.75); }
+
+#searchInput:focus{
+  border-color: rgba(37,211,102,.55);
+}
+@media(max-width:700px){
+  .header{ flex-wrap:wrap; }
+  .header-search{ width:100%; min-width:0; max-width:none; }
+}
+
 </style>
 </head>
 
@@ -195,11 +229,17 @@ header,.section,.card{
 
 <header class="header">
   <img src="assets/logo.png" alt="AKAZA Logo" class="header-logo">
+
   <div class="header-text">
     <h1 id="businessName">AKAZA SERVICIOS</h1>
     <div class="subtitle">Streaming • IA • Software</div>
   </div>
+
+  <div class="header-search">
+    <input id="searchInput" type="search" placeholder="Buscar (Netflix, Disney…)" />
+  </div>
 </header>
+
 
 <!-- INFO IMPORTANTE -->
 <div class="section" id="infoBox" style="display:none">
@@ -324,6 +364,15 @@ function render(data){
   businessName.textContent=data.business_name||"Catálogo";
   const cats=["Todos",...new Set(data.catalog.map(i=>i.category))];
   let active="Todos";
+  let q = "";
+
+const searchInput = document.getElementById("searchInput");
+if(searchInput){
+  searchInput.addEventListener("input", (e)=>{
+    q = (e.target.value || "").toLowerCase().trim();
+    drawGrid();
+  });
+}
 
   function drawTabs(){
     tabs.innerHTML="";
@@ -338,9 +387,14 @@ function render(data){
 
   function drawGrid(){
     grid.innerHTML="";
-    data.catalog
-      .filter(i=>active==="Todos"||i.category===active)
-      .forEach(item=>{
+data.catalog
+  .filter(i=>{
+    const okCat = (active==="Todos" || i.category===active);
+    const okQ   = (!q || (i.service||"").toLowerCase().includes(q));
+    return okCat && okQ;
+  })
+  .forEach(item=>{
+
         const card=document.createElement("div");
         card.className="card";
 
