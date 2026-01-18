@@ -184,9 +184,9 @@ function localCandidates(service){
   if(s.includes("apple tv")) return ["assets/apple-tv-plus.png","assets/appletv.png"];
   if(s.includes("spotify")) return ["assets/spotify.png"];
   if(s.includes("youtube")) return ["assets/youtube.png"];
-  if(s.includes("movistartv")) return ["assets/movistar.png"];
+  if(s.includes("movistar tv")) return ["assets/movistar.png"];
   if(s.includes("chatgpt")) return ["assets/gpt.png"];
-  if(s.includes("Gemini Pro + 2TB en Drive")) return ["assets/gemini.png"];
+  if(s.includes("gemini")) return ["assets/gemini.png"];
 
   // fallback genérico por si subes más logos
   return [`assets/${slugify(service)}.png`];
@@ -203,9 +203,9 @@ function cdnCandidates(service){
   if(s.includes("apple tv")) return ["appletv","appletvplus"];
   if(s.includes("spotify")) return ["spotify"];
     if(s.includes("youtube")) return ["assets/youtube.png"];
-  if(s.includes("movistartv")) return ["assets/movistar.png"];
+  if(s.includes("movistar tv")) return ["assets/movistar.png"];
   if(s.includes("chatgpt")) return ["assets/gpt.png"];
-  if(s.includes("Gemini Pro + 2TB en Drive")) return ["assets/gemini.png"];
+  if(s.includes("gemini")) return ["assets/gemini.png"];
 
   // estos pueden fallar según el CDN, por eso van como último recurso
   if(s.includes("disney")) return ["disneyplus","disney"];
