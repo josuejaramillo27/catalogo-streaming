@@ -1,142 +1,143 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AKAZA SERVICIOS - Catálogo</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AKAZA SERVICIOS - Catálogo</title>
 
-  <style>
-    :root{
-      --bg:#0b0b0e;
-      --card:#12121a;
-      --muted:#b8b8c6;
-      --text:#f4f4fb;
-      --border:rgba(255,255,255,.10);
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:24px 16px 80px}
-    header{
-      padding:20px;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background:var(--card);
-      box-shadow:var(--shadow);
-      margin-bottom:20px;
-    }
-    h1{margin:0;font-size:22px}
-    .subtitle{color:var(--muted);font-size:13px}
+<style>
+:root{
+  --bg:#0b0b0e;
+  --card:#12121a;
+  --muted:#b8b8c6;
+  --text:#f4f4fb;
+  --border:rgba(255,255,255,.10);
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 16px 80px}
 
-    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-    .tab{
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:#00000055;
-      color:var(--muted);
-      cursor:pointer;
-      font-size:13px;
-    }
-    .tab.active{
-      background:#20c99733;
-      border-color:#20c997;
-      color:#fff;
-    }
+header{
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:var(--card);
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+}
+h1{margin:0;font-size:22px}
+.subtitle{color:var(--muted);font-size:13px}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.grid{grid-template-columns:1fr}}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.tab{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#00000055;
+  color:var(--muted);
+  cursor:pointer;
+  font-size:13px;
+}
+.tab.active{
+  background:#20c99733;
+  border-color:#20c997;
+  color:#fff;
+}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:16px;
-      box-shadow:var(--shadow);
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
 
-    .logo-box{
-      width:120px;
-      height:120px;
-      margin:0 auto 10px;
-      border-radius:22px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#00000055;
-    }
-    .logo-box img{
-      width:80%;
-      height:80%;
-      object-fit:contain;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
 
-    .service-name{
-      text-align:center;
-      font-weight:800;
-      margin-bottom:6px;
-    }
-    .hint{
-      text-align:center;
-      font-size:12px;
-      color:var(--muted);
-      margin-bottom:10px;
-    }
+.logo-box{
+  width:120px;
+  height:120px;
+  margin:0 auto 10px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#00000055;
+}
+.logo-box img{
+  width:80%;
+  height:80%;
+  object-fit:contain;
+}
 
-    .plan{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:10px;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:#00000044;
-      cursor:pointer;
-      margin-bottom:6px;
-    }
-    .price{font-weight:700}
+.service-name{
+  text-align:center;
+  font-weight:800;
+  margin-bottom:6px;
+}
+.hint{
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
 
-    .wa{
-      margin-top:10px;
-      width:100%;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid #25D366;
-      background:#25D36633;
-      color:#fff;
-      font-weight:800;
-      cursor:pointer;
-    }
+.plan{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#00000044;
+  cursor:pointer;
+  margin-bottom:6px;
+}
+.price{font-weight:700}
 
-    .float-wa{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      background:#25D366;
-      color:#08240f;
-      font-size:26px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:none;
-      cursor:pointer;
-      box-shadow:0 18px 35px rgba(0,0,0,.45);
-    }
-  </style>
+.wa{
+  margin-top:10px;
+  width:100%;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid #25D366;
+  background:#25D36633;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.float-wa{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#25D366;
+  color:#08240f;
+  font-size:26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 18px 35px rgba(0,0,0,.45);
+}
+</style>
 </head>
 
 <body>
@@ -155,18 +156,21 @@
 <script>
 const EMOJI={Streaming:"🎬",IA:"🤖",Software:"💻"};
 
-function slugForIcon(name){
-  const s=(name||"").toLowerCase();
-  if(s.includes("netflix"))return"netflix";
-  if(s.includes("prime"))return"amazonprime";
-  if(s.includes("hbo"))return"hbomax";
-  if(s.includes("disney"))return"disneyplus";
-  if(s.includes("spotify"))return"spotify";
-  if(s.includes("crunchyroll"))return"crunchyroll";
-  if(s.includes("paramount"))return"paramountplus";
-  if(s.includes("apple"))return"appletv";
-  if(s.includes("vix"))return"vix";
-  return null;
+function iconCandidates(service){
+  const s=(service||"").toLowerCase();
+
+  if(s.includes("netflix")) return ["netflix"];
+  if(s.includes("hbo")) return ["hbomax","hbo"];
+  if(s.includes("crunchyroll")) return ["crunchyroll"];
+  if(s.includes("paramount")) return ["paramountplus","paramount"];
+  if(s.includes("apple tv")) return ["appletv","appletvplus"];
+  if(s.includes("spotify")) return ["spotify"];
+
+  // los que fallaban antes
+  if(s.includes("disney")) return ["disneyplus","disney"];
+  if(s.includes("prime")) return ["primevideo","amazonprimevideo","amazonprime"];
+
+  return [];
 }
 
 async function loadData(){
@@ -180,6 +184,7 @@ function waLink(num,msg){
 
 function render(data){
   document.getElementById("businessName").textContent=data.business_name;
+
   const cats=["Todos",...new Set(data.catalog.map(i=>i.category))];
   let active="Todos";
 
@@ -198,6 +203,7 @@ function render(data){
   function drawGrid(){
     const g=document.getElementById("grid");
     g.innerHTML="";
+
     data.catalog
       .filter(i=>active==="Todos"||i.category===active)
       .forEach(item=>{
@@ -207,14 +213,23 @@ function render(data){
         const box=document.createElement("div");
         box.className="logo-box";
 
-        const icon=slugForIcon(item.service);
-        if(icon){
-          const img=document.createElement("img");
-          img.src=`https://cdn.simpleicons.org/${icon}/ffffff`;
-          img.onerror=()=>box.textContent=EMOJI[item.category]||"✨";
-          box.appendChild(img);
-        }else{
+        const candidates=iconCandidates(item.service);
+        if(!candidates.length){
           box.textContent=EMOJI[item.category]||"✨";
+        }else{
+          const img=document.createElement("img");
+          let i=0;
+          const tryNext=()=>{
+            if(i>=candidates.length){
+              box.textContent=EMOJI[item.category]||"✨";
+              return;
+            }
+            img.src=`https://cdn.simpleicons.org/${candidates[i]}/ffffff`;
+            i++;
+          };
+          img.onerror=tryNext;
+          box.appendChild(img);
+          tryNext();
         }
 
         card.appendChild(box);
@@ -247,7 +262,9 @@ function render(data){
         const wa=document.createElement("button");
         wa.className="wa";
         wa.textContent="Pedir por WhatsApp";
-        wa.onclick=()=>window.open(waLink(data.whatsapp_number,`Hola, quiero información de ${item.service}`));
+        wa.onclick=()=>window.open(
+          waLink(data.whatsapp_number,`Hola, quiero información de ${item.service}`)
+        );
         card.appendChild(wa);
 
         g.appendChild(card);
@@ -261,6 +278,11 @@ function render(data){
     window.open(waLink(data.whatsapp_number,"Hola, quiero hacer un pedido."));
   };
 }
+
+loadData().then(render);
+</script>
+</body>
+</html>
 
 loadData().then(render);
 </script>
