@@ -27,6 +27,7 @@
       "id": "netflix",
       "category": "Streaming",
       "service": "Netflix",
+      "logo": "assets/netflix.png",
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -38,6 +39,7 @@
       "id": "primevideo",
       "category": "Streaming",
       "service": "Prime Video",
+      "logo": "assets/ptime.png",
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -49,6 +51,7 @@
       "id": "hbomax",
       "category": "Streaming",
       "service": "HBO Max",
+      "logo": "assets/hbo.png",
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
@@ -63,7 +66,7 @@
       "plans": [
         {
           "name": "Perfil personal (1 mes)",
-          "price": 9
+          "price": 10
         }
       ]
     },
