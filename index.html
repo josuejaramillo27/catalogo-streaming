@@ -202,10 +202,7 @@
 
       <textarea id="editor" spellcheck="false"></textarea>
       <div class="row" style="margin-top:10px">
-        <button class="btn" id="btnImport">Importar</button>
-        <button class="btn" id="btnExport">Exportar</button>
         <button class="btn danger" id="btnClose">Cerrar</button>
-        <button class="btn primary" id="btnSave">Guardar</button>
       </div>
       <div class="hint" id="status"></div>
     </div>
@@ -217,29 +214,6 @@
     "IA": "🤖",
     "Software": "💻"
   };
-
-  const STORAGE_KEY = "akaza_catalog_v1";
-
-  async function loadBaseData(){
-    const res = await fetch("./data.json", {cache:"no-store"});
-    return await res.json();
-  }
-
-  function loadSavedData(){
-    try{
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if(!raw) return null;
-      return JSON.parse(raw);
-    }catch(e){ return null; }
-  }
-
-  function saveData(obj){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-  }
-
-  function resetData(){
-    localStorage.removeItem(STORAGE_KEY);
-  }
 
   function waLink(number, text){
     const base = "https://wa.me/" + String(number || "").replace(/\D/g,"");
@@ -385,8 +359,7 @@
 
   function openModal(text){
     document.getElementById("editor").value = text;
-    document.getElementById("modalBackdrop").style.display = "flex";
-  }
+
   function closeModal(){
     document.getElementById("modalBackdrop").style.display = "none";
     document.getElementById("status").textContent = "";
@@ -419,8 +392,7 @@
 
   (async function init(){
     const base = await loadBaseData();
-    const saved = loadSavedData();
-    let data = saved || base;
+    let data = base;
 
     document.getElementById("businessName").textContent = data.business_name || "Catálogo";
 
@@ -448,12 +420,10 @@
       window.open(waLink(data.whatsapp_number, "Hola, quiero hacer un pedido."), "_blank");
     };
 
-    document.getElementById("btnEdit").onclick = () => {
       const raw = JSON.stringify(data, null, 2);
       openModal(raw);
     };
 
-    document.getElementById("btnReset").onclick = async () => {
       resetData();
       data = await loadBaseData();
       document.getElementById("businessName").textContent = data.business_name || "Catálogo";
@@ -469,9 +439,7 @@
       document.getElementById("status").textContent = "Listo: restaurado a valores originales.";
     };
 
-    document.getElementById("btnClose").onclick = closeModal;
 
-    document.getElementById("btnSave").onclick = () => {
       try{
         const txt = document.getElementById("editor").value;
         const obj = JSON.parse(txt);
@@ -494,12 +462,10 @@
       }
     };
 
-    document.getElementById("btnExport").onclick = () => {
       downloadText("data.json", JSON.stringify(data, null, 2));
       document.getElementById("status").textContent = "Exportado: data.json";
     };
 
-    document.getElementById("btnImport").onclick = () => {
       importFromFile((txt)=>{
         try{
           const obj = JSON.parse(txt);
