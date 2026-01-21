@@ -636,20 +636,20 @@ function render(data){
   let q = "";
 
 const searchInput = document.getElementById("searchInput");
-if(searchInput){
+if (searchInput){
   searchInput.addEventListener("input", (e)=>{
     q = (e.target.value || "").toLowerCase().trim();
     drawGrid();
-    if(data.canal_whatsapp){
+  });
+}
+// Render del canal (se ejecuta 1 vez al cargar)
+if (data.canal_whatsapp?.length){
   const ul = document.getElementById("canalList");
   ul.innerHTML = "";
   data.canal_whatsapp.forEach(t=>{
     const li = document.createElement("li");
     li.textContent = t;
     ul.appendChild(li);
-  });
-}
-
   });
 }
 
