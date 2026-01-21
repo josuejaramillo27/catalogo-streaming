@@ -545,9 +545,16 @@ function wa(num,msg){
 }
 
 async function loadData(){
-  const r=await fetch("./data.json",{cache:"no-store"});
-  return await r.json();
+  const r = await fetch("./data.json", { cache:"no-store" });
+
+  if(!r.ok){
+    throw new Error("No se pudo cargar data.json (HTTP " + r.status + "). Revisa que exista en la MISMA carpeta que index.html");
+  }
+
+  const data = await r.json();
+  return data;
 }
+
 
 /* ================= LOGOS ================= */
 
@@ -631,7 +638,8 @@ function renderSections(data){
 
 function render(data){
   businessName.textContent=data.business_name||"Catálogo";
-  const cats=["Todos",...new Set(data.catalog.map(i=>i.category))];
+  const catalog = Array.isArray(data.catalog) ? data.catalog : [];
+const cats = ["Todos", ...new Set(catalog.map(i => i.category))];
   let active="Todos";
   let q = "";
 
@@ -666,7 +674,14 @@ if (data.canal_whatsapp?.length){
 
   function drawGrid(){
     grid.innerHTML="";
-data.catalog
+    if(!catalog.length){
+  grid.innerHTML = `<div style="grid-column:1/-1;opacity:.8">
+    No hay productos. Revisa que <b>data.json</b> tenga la clave <b>"catalog"</b> y que no esté vacío.
+  </div>`;
+  return;
+}
+
+catalog
   .filter(i=>{
     const okCat = (active==="Todos" || i.category===active);
     const okQ   = (!q || (i.service||"").toLowerCase().includes(q));
