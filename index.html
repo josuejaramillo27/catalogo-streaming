@@ -351,44 +351,43 @@ header > *{
   margin-bottom: 12px;   /* prueba 10–16px */
   line-height: 1.6;      /* mejora lectura */
 }
-/* === DISTRIBUIDOR CON IMAGEN === */
+/* === DISTRIBUIDOR CON IMAGEN (GRID) === */
 .dist{
-  display:flex;
-  gap:32px;
-  align-items:flex-start; /* 👈 evita que empuje el texto */
+  display:grid;
+  grid-template-columns: 1fr 240px; /* texto | imagen */
+  gap:24px;
+  align-items:start;
 }
 
 .dist-left{
-  flex:1;
+  min-width: 0;
 }
 
 .dist-right{
-  flex:0 0 auto;
   display:flex;
   justify-content:center;
+  align-items:flex-start;
 }
 
 .dist-right img{
-  width:220px;        /* 👈 tamaño controlado */
+  width:220px;
   max-width:100%;
   height:auto;
   opacity:.95;
   filter: drop-shadow(0 0 25px rgba(181,23,255,.35));
 }
 
-
 /* Responsive */
 @media(max-width:800px){
   .dist{
-    flex-direction:column;
-    text-align:left;
+    grid-template-columns: 1fr; /* se apila */
   }
   .dist-right{
-    flex:0 0 auto;
+    justify-content:flex-start;
   }
-}
-.dist-right img{
-  animation: floatAkaza 4s ease-in-out infinite;
+  .dist-right img{
+    width:180px;
+  }
 }
 
 @keyframes floatAkaza{
@@ -451,11 +450,10 @@ header > *{
   </div>
 
   <div class="dist-right">
-    <img src="assets/akazaxd.png" alt="Distribuidor AKAZA">
+    <img src="assets/distribuidor.png" alt="Distribuidor AKAZA">
   </div>
 </div>
 
-</div>
 
 <div class="float-wa" id="floatWA">✆</div>
 
