@@ -354,8 +354,8 @@ header > *{
 /* === DISTRIBUIDOR CON IMAGEN === */
 .dist{
   display:flex;
-  gap:24px;
-  align-items:center;
+  gap:32px;
+  align-items:flex-start; /* 👈 evita que empuje el texto */
 }
 
 .dist-left{
@@ -363,17 +363,19 @@ header > *{
 }
 
 .dist-right{
-  flex:0 0 260px;
+  flex:0 0 auto;
   display:flex;
   justify-content:center;
 }
 
 .dist-right img{
+  width:220px;        /* 👈 tamaño controlado */
   max-width:100%;
   height:auto;
   opacity:.95;
   filter: drop-shadow(0 0 25px rgba(181,23,255,.35));
 }
+
 
 /* Responsive */
 @media(max-width:800px){
