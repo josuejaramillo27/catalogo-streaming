@@ -640,6 +640,16 @@ if(searchInput){
   searchInput.addEventListener("input", (e)=>{
     q = (e.target.value || "").toLowerCase().trim();
     drawGrid();
+    if(data.canal_whatsapp){
+  const ul = document.getElementById("canalList");
+  ul.innerHTML = "";
+  data.canal_whatsapp.forEach(t=>{
+    const li = document.createElement("li");
+    li.textContent = t;
+    ul.appendChild(li);
+  });
+}
+
   });
 }
 
