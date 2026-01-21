@@ -601,8 +601,23 @@ function initFadeIn(){
 loadData().then(data=>{
   renderSections(data);
   render(data);
-  initFadeIn(); // 👈 activa animación
+  initFadeIn();
+}).catch(err=>{
+  console.error(err);
+  const grid = document.getElementById("grid");
+  const tabs = document.getElementById("tabs");
+  if(tabs) tabs.innerHTML = "";
+  if(grid){
+    grid.innerHTML = `
+      <div style="grid-column:1/-1;padding:14px;border:1px solid rgba(255,255,255,.15);border-radius:14px;background:#00000055">
+        <b>No se pudo cargar el catálogo.</b><br>
+        Revisa que exista <b>data.json</b> en la misma carpeta del <b>index.html</b> y que tenga <b>"catalog"</b>.<br><br>
+        <span style="opacity:.8">${err.message}</span>
+      </div>
+    `;
+  }
 });
+
 </script>
 </body>
 </html>
