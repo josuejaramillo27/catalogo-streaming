@@ -7,13 +7,20 @@
 
 <style>
 :root{
-  --bg:#0b0b0e;
-  --card:#12121a;
-  --muted:#b8b8c6;
-  --text:#f4f4fb;
-  --border:rgba(255,255,255,.1);
+  --bg:#06070f;
+  --card:rgba(14,18,38,.85);
+  --muted:#a9b0d6;
+  --text:#f5f7ff;
+  --border:rgba(170,120,255,.25);
+
+  /* Aura Akaza */
+  --akaza-blue:#4cc9f0;
+  --akaza-purple:#b517ff;
+  --akaza-pink:#ff4ecd;
+
   --radius:18px;
 }
+
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -98,17 +105,24 @@ header{
   width:100%;
   padding:12px;
   border-radius:14px;
-  border:1px solid rgba(37,211,102,.6);
+  border:1px solid var(--akaza-blue);
   background: linear-gradient(
-    180deg,
-    rgba(37,211,102,.25),
-    rgba(37,211,102,.15)
+    135deg,
+    rgba(76,201,240,.35),
+    rgba(181,23,255,.35)
   );
-  color:#eafff3;
-  font-weight:700;
+  color:#fff;
+  font-weight:800;
   cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
 }
 
+.wa:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 0 16px rgba(76,201,240,.45),
+    0 0 28px rgba(181,23,255,.35);
+}
 
 .float-wa{
   position:fixed;
@@ -273,6 +287,64 @@ header,.section,.card{
 .fade.show{
   opacity:1;
   transform:none;
+}
+/* === FONDO AURA AKAZA === */
+body{
+  background:
+    radial-gradient(900px 600px at 10% 0%, rgba(76,201,240,.18), transparent 60%),
+    radial-gradient(800px 600px at 90% 10%, rgba(181,23,255,.18), transparent 55%),
+    radial-gradient(900px 700px at 50% 120%, rgba(255,78,205,.12), transparent 60%),
+    var(--bg);
+}
+/* === AURA EN TARJETAS === */
+.card{
+  border:1px solid var(--border);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.card:hover{
+  border-color: var(--akaza-purple);
+  box-shadow:
+    0 0 20px rgba(181,23,255,.25),
+    0 0 40px rgba(76,201,240,.15);
+}
+/* === AKAZA GIF HEADER === */
+header{
+  position:relative;
+  overflow:hidden;
+}
+
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("https://media.tenor.com/b5u-bo_LuPcAAAAM/akaza-demon-slayer.gif") center/cover no-repeat;
+  opacity:.18;
+  filter: blur(2px) saturate(120%);
+  z-index:0;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(6,7,15,.85),
+    rgba(6,7,15,.55)
+  );
+  z-index:1;
+}
+
+header > *{
+  position:relative;
+  z-index:2;
+}
+/* === TEXTO CON AURA AKAZA === */
+#businessName{
+  text-shadow:
+    0 0 12px rgba(76,201,240,.45),
+    0 0 22px rgba(181,23,255,.35);
 }
 
 </style>
