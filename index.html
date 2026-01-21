@@ -394,6 +394,40 @@ header > *{
   0%,100%{ transform:translateY(0); }
   50%{ transform:translateY(-6px); }
 }
+/* === FORZAR 2 COLUMNAS SOLO EN DISTRIBUIDOR === */
+#distBox{
+  display:grid !important;
+  grid-template-columns: 1fr 240px !important;
+  gap:24px !important;
+  align-items:start !important;
+}
+
+#distBox .dist-right{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+#distBox .dist-right img{
+  width:220px;
+  max-width:100%;
+  height:auto;
+  opacity:.95;
+  filter: drop-shadow(0 0 25px rgba(181,23,255,.35));
+}
+
+/* Responsive */
+@media(max-width:800px){
+  #distBox{
+    grid-template-columns: 1fr !important;
+  }
+  #distBox .dist-right{
+    justify-content:flex-start;
+  }
+  #distBox .dist-right img{
+    width:180px;
+  }
+}
 
 </style>
 </head>
