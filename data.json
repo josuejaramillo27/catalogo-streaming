@@ -49,7 +49,7 @@
       "service": "HBO Max",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal STANDAR (1 mes)", "price": 7 }
+        { "name": "Perfil personal STANDAR (1 mes)", "price": 7 },
         { "name": "Perfil personal PLATINO (1 mes)", "price": 7 }
       ]
     },
