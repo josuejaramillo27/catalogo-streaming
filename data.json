@@ -35,29 +35,29 @@
       "service": "Netflix",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 13 }
+        { "name": "Perfil personal (1 mes)", "price": 15 }
       ]
     },
     {
       "service": "Prime Video",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 7 }
+        { "name": "Perfil personal (1 mes)", "price": 9 }
       ]
     },
     {
       "service": "HBO Max",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal STANDAR (1 mes)", "price": 7 },
-        { "name": "Perfil personal PLATINO (1 mes)", "price": 7 }
+        { "name": "Perfil personal STANDAR (1 mes)", "price": 9 },
+        { "name": "Perfil personal PLATINO (1 mes)", "price": 11 }
       ]
     },
     {
       "service": "Disney+ Premium",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 9 }
+        { "name": "Perfil personal (1 mes)", "price": 10 }
       ]
     },
     {
@@ -71,28 +71,28 @@
       "service": "Paramount+",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 8 }
+        { "name": "Perfil personal (1 mes)", "price": 9 }
       ]
     },
     {
       "service": "IPTV Smarters Pro",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 9 }
+        { "name": "3 Dispositivos (1 mes)", "price": 15 }
       ]
     },
     {
       "service": "ViX Premium",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 6 }
+        { "name": "Perfil personal (1 mes)", "price": 7 }
       ]
     },
     {
       "service": "Apple TV+",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes)", "price": 7 }
+        { "name": "Perfil personal (1 mes)", "price": 9 }
       ]
     },
     {
@@ -109,7 +109,7 @@
       "service": "YouTube Premium",
       "category": "Streaming",
       "plans": [
-        { "name": "Correo personal (1 mes)", "price": 7 }
+        { "name": "Correo personal - Renovable (1 mes)", "price": 10 }
       ]
     },
     {
@@ -123,7 +123,7 @@
       "service": "DGO",
       "category": "Streaming",
       "plans": [
-        { "name": "Perfil personal (1 mes) + activación a TV", "price": 20 }
+        { "name": "Perfil personal (1 mes) + activación a TV", "price": 22 }
       ]
     },
 
@@ -191,7 +191,7 @@
       "category": "Software",
       "plans": [
         { "name": "1 mes", "price": 10 },
-        { "name": "1 año", "price": 35 }
+        { "name": "1 año", "price": 50 }
       ]
     },
     {
